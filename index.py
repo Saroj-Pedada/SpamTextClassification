@@ -1,13 +1,8 @@
-import pandas as pd
-import numpy as np
-import seaborn as sns
+#import pandas as pd
+#import numpy as np
 from keras.models import Model
-#from keras.layers import LSTM, Activation, Dense, Dropout, Input, Embedding
-#from keras.optimizers import RMSprop
 from keras.preprocessing.text import Tokenizer
 from keras.utils import pad_sequences
-#from keras.utils import to_categorical
-#from keras.callbacks import EarlyStopping
 from keras.models import load_model
 import streamlit as st
 import pickle
