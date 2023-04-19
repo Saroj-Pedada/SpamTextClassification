@@ -46,7 +46,7 @@ sample_texts = ["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2
                 "congratulations you won! sms YES on 54233 to win",
                "Your 2004 account for 07XXXXXXXXX shows 786"]
 if st.button('Predict Spam/Ham'):
-    txts = tok.texts_to_sequences([sample_texts])
+    txts = tok.texts_to_sequences(sample_texts)
     txts = pad_sequences(txts, maxlen=max_len)
     preds = model.predict(txts)
     for x in preds :
