@@ -28,8 +28,8 @@ def RNN():
 
 max_words = 1000
 max_len = 150
-model = RNN()
-model.compile(loss='binary_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
+# model = RNN()
+# model.compile(loss='binary_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
 model = load_model('model.h5')
 
 st.title('Spam or Ham')
