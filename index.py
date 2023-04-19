@@ -12,8 +12,6 @@ from keras.models import load_model
 import streamlit as st
 import pickle
 
-@st.cache_data
-
 def RNN():
     max_words = 1000
     max_len = 150
