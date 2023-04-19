@@ -37,14 +37,16 @@ model = load_model('model.h5')
 st.title('Spam or Ham')
 st.header('Enter any string:')
 
-sample_texts = st.text_input('sample_texts')
+sample_texts = st.text_input('Spam/Ham Text Classifier')
 with open('tokenizer.pickle', 'rb') as handle:
     tok = pickle.load(handle)
-sample_texts = ["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005",
-                "i'm not coming to home today",
-                "ok. i'm good",
-                "congratulations you won! sms YES on 54233 to win",
-               "Your 2004 account for 07XXXXXXXXX shows 786"]
+
+# sample_texts = ["Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005",
+#                 "i'm not coming to home today",
+#                 "ok. i'm good",
+#                 "congratulations you won! sms YES on 54233 to win",
+#                "Your 2004 account for 07XXXXXXXXX shows 786"]
+
 if st.button('Predict Spam/Ham'):
     txts = tok.texts_to_sequences(sample_texts)
     txts = pad_sequences(txts, maxlen=max_len)
