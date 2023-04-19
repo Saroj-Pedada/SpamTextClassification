@@ -11,3 +11,5 @@ Here are some sample texts to test out the model :
 "Your 2004 account for 07XXXXXXXXX shows 786"
 
 Thank You!
+
+For the ML ipynb file and csv file --> https://github.com/Saroj-Pedada/TextClassification-ML
