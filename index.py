@@ -34,14 +34,6 @@ model = RNN()
 model.compile(loss='binary_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
 model = load_model('model.h5')
 
-def predict(text):
-    max_words = 1000
-    max_len = 150
-    txts = tok.texts_to_sequences(text)
-    txts = pad_sequences(txts, maxlen=max_len)
-    preds = model.predict(txts)
-    return preds
-
 st.title('Spam or Ham')
 st.header('Enter any string:')
 
@@ -50,9 +42,10 @@ with open('tokenizer.pickle', 'rb') as handle:
     tok = pickle.load(handle)
 
 if st.button('Predict Spam/Ham'):
-    price = predict(sample_texts)
-    for x in price :
-        if(x<=0.5):
-            st.success("Ham")
-        else:
-            st.success("Spam")
+    txts = tok.texts_to_sequences(sample_texts)
+    txts = pad_sequences(txts, maxlen=max_len)
+    preds = model.predict(txts)
+    if(preds[0]>0.5):
+        st.success('Spam')
+    else:
+        st.success('Ham')
