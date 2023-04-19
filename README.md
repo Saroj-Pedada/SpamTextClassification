@@ -13,4 +13,5 @@ Here are some sample texts to test out the model :
 Thank You!
 
 For the ML ipynb file and csv file --> https://github.com/Saroj-Pedada/TextClassification-ML
-For the Streamlit website, check the right window on this page or just click this --> https://saroj-pedada-spamtextclassification-index-e9d27y.streamlit.app
+
+For the Streamlit website, check the right window on this page or just click this --> https://dev-saroj-spamdetector.streamlit.app
