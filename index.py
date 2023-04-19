@@ -42,7 +42,7 @@ with open('tokenizer.pickle', 'rb') as handle:
     tok = pickle.load(handle)
 
 if st.button('Predict Spam/Ham'):
-    txts = tok.texts_to_sequences(sample_texts)
+    txts = tok.texts_to_sequences([sample_texts])
     txts = pad_sequences(txts, maxlen=max_len)
     preds = model.predict(txts)
     if(preds[0]>0.5):
