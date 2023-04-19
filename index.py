@@ -8,6 +8,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.utils import pad_sequences
 from keras.utils import to_categorical
 from keras.callbacks import EarlyStopping
+from keras.models import load_model
 import streamlit as st
 import pickle
 
@@ -31,7 +32,7 @@ max_words = 1000
 max_len = 150
 model = RNN()
 model.compile(loss='binary_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
-model.load_model('model.h5')
+model = load_model('model.h5')
 
 def predict(text):
     max_words = 1000
