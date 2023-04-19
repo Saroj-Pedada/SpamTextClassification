@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
-from sklearn.preprocessing import LabelEncoder
 from keras.models import Model
 from keras.layers import LSTM, Activation, Dense, Dropout, Input, Embedding
 from keras.optimizers import RMSprop
