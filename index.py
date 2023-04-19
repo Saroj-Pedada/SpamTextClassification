@@ -54,7 +54,7 @@ preds = model.predict(txts)
 print(preds)
 if st.button('Predict Spam/Ham'):
     for x in preds :
-        if(x<=0.5):
+        if(x<=0.2):
             st.success("Ham")
         else:
             st.success("Spam")
