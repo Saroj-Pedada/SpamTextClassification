@@ -18,7 +18,7 @@ model = load_model('model.h5')
 
 st.title('Spam or Ham')
 
-sample_texts = st.text_input('Spam/Ham Text Classifier')
+sample_texts = st.text_input('Enter text you want to classify: ')
 
 with open('tokenizer.pickle', 'rb') as handle:
     tok = pickle.load(handle)
@@ -26,7 +26,7 @@ with open('tokenizer.pickle', 'rb') as handle:
 txts = tok.texts_to_sequences([sample_texts])
 txts = pad_sequences(txts, maxlen=max_len)
 preds = model.predict(txts)
-print(preds)
+
 if st.button('Predict'):
     if(preds<=0.2):
         st.success("Ham")
