@@ -12,10 +12,10 @@ import streamlit as st
 import pickle
 
 @st.cache
-max_words = 1000
-max_len = 150
 
 def RNN():
+    max_words = 1000
+    max_len = 150
     inputs = Input(name='inputs',shape=[max_len])
     layer = Embedding(max_words,50,input_length=max_len)(inputs)
     layer = LSTM(64)(layer)
@@ -27,11 +27,15 @@ def RNN():
     model = Model(inputs=inputs,outputs=layer)
     return model
 
+max_words = 1000
+max_len = 150
 model = RNN()
 model.compile(loss='binary_crossentropy',optimizer=RMSprop(),metrics=['accuracy'])
 model.load_model('model.h5')
 
 def predict(text):
+    max_words = 1000
+    max_len = 150
     txts = tok.texts_to_sequences(text)
     txts = pad_sequences(txts, maxlen=max_len)
     preds = model.predict(txts)
