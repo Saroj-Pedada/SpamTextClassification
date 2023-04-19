@@ -51,7 +51,8 @@ with open('tokenizer.pickle', 'rb') as handle:
 
 if st.button('Predict Spam/Ham'):
     price = predict(sample_texts)
-    if(price[0]>0.5):
-        st.success('Spam')
-    else:
-        st.success('Ham')
+    for x in price :
+        if(x<=0.5):
+            st.success("Ham")
+        else:
+            st.success("Spam")
