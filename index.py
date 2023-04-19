@@ -46,6 +46,6 @@ if st.button('Predict Spam/Ham'):
     txts = pad_sequences(txts, maxlen=max_len)
     preds = model.predict(txts)
     if(preds[0]>0.5):
-        st.success('Spam')
+        st.success(preds)
     else:
-        st.success('Ham')
+        st.success(preds)
