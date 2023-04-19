@@ -46,12 +46,14 @@ with open('tokenizer.pickle', 'rb') as handle:
 #                 "ok. i'm good",
 #                 "congratulations you won! sms YES on 54233 to win",
 #                "Your 2004 account for 07XXXXXXXXX shows 786"]
+
 print([sample_texts])
 if st.button('Predict Spam/Ham'):
     txts = tok.texts_to_sequences([sample_texts])
     txts = pad_sequences(txts, maxlen=max_len)
     preds = model.predict(txts)
     for x in preds :
+        print(x)
         if(x<=0.5):
             st.success("Ham")
         else:
