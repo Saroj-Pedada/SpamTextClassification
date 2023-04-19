@@ -12,6 +12,8 @@ import streamlit as st
 import pickle
 
 @st.cache
+max_words = 1000
+max_len = 150
 
 def RNN():
     inputs = Input(name='inputs',shape=[max_len])
@@ -37,8 +39,7 @@ def predict(text):
 
 st.title('Spam or Ham')
 st.header('Enter any string:')
-max_words = 1000
-max_len = 150
+
 sample_texts = st.text_input('sample_texts')
 with open('tokenizer.pickle', 'rb') as handle:
     tok = pickle.load(handle)
