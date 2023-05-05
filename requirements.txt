@@ -1,6 +1,6 @@
 pandas
 numpy
 seaborn
-sklearn
+scikit-learn
 keras
 tensorflow
